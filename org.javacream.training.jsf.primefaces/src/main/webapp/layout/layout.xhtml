@@ -21,14 +21,16 @@
 		</f:facet>
 		<hr />
 		<h:form>
-			<h:messages />
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
 			<p:themeSwitcher id="basic" style="width:165px">
 				<f:selectItem itemLabel="Bluesky" itemValue="bluesky" />
 				<f:selectItem itemLabel="Darkness" itemValue="ui-darkness" />
 			</p:themeSwitcher>
 		</h:form>
 		<hr />
-		
+
 		<p:panelGrid id="main_content" columns="3" layout="grid">
 			<p:panel>
 				<ui:insert name="content-left">

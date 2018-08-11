@@ -3,22 +3,25 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	>
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/layout/layout.xhtml">
 	<ui:define name="title">PrimeFaces</ui:define>
 	<ui:define name="pageHeader">
- 		<p:outputLabel value="Store Request"></p:outputLabel>
+		<p:outputLabel value="Store Request"></p:outputLabel>
 	</ui:define>
 	<ui:define name="content">
 		<h:form>
-			<p:inputText value="#{storeServiceWebBean.category}"></p:inputText>
-			<p:inputText value="#{storeServiceWebBean.item}"></p:inputText>
-			<p:commandButton ajax="false" value="Request"
-				action="#{storeServiceWebBean.retrieveStock}"></p:commandButton>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Category:"></p:outputLabel>
+				<p:inputText value="#{storeServiceWebBean.category}"></p:inputText>
+				<p:outputLabel value="Item:"></p:outputLabel>
+				<p:inputText value="#{storeServiceWebBean.item}"></p:inputText>
+				<p:commandButton ajax="false" value="Request"
+					action="#{storeServiceWebBean.retrieveStock}"></p:commandButton>
+			</p:panelGrid>
 		</h:form>
-		<p:outputLabel value="#{storeServiceWebBean.stock}"></p:outputLabel>
+		<p:outputLabel value="Stock: #{storeServiceWebBean.stock}" rendered="#{storeServiceWebBean.stock > -1}"></p:outputLabel>
 	</ui:define>
 </ui:composition>
 </html>

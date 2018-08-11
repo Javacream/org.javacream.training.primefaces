@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+	<p:panel header="Result" rendered="#{booksServiceWebBean.book != null}">
+		<p:panelGrid columns="2">
+			<p:outputLabel value="ISBN: "></p:outputLabel>
+			<p:outputLabel value="#{booksServiceWebBean.book.isbn}"></p:outputLabel>
+			<p:outputLabel value="Title: "></p:outputLabel>
+			<p:outputLabel value="#{booksServiceWebBean.book.title}"></p:outputLabel>
+			<p:outputLabel value="Price: "></p:outputLabel>
+			<p:outputLabel value="#{booksServiceWebBean.book.price}"></p:outputLabel>
+		</p:panelGrid>
+	</p:panel>
+</ui:composition>
+</html>

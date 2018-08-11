@@ -12,7 +12,7 @@ public class StoreServiceWebBean {
 	@Inject
 	private StoreService storeService;
 
-	private int stock;
+	private int stock = -1;
 	private String category;
 	private String item;
 

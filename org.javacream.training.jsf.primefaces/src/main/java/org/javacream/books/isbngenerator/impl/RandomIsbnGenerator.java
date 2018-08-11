@@ -6,8 +6,8 @@ import org.javacream.books.isbngenerator.api.IsbnGenerator;
 
 public class RandomIsbnGenerator implements IsbnGenerator {
 
-	private String prefix;
-	private String suffix;
+ 	private String prefix = "ISBN ";
+	private String suffix = "-de";
 	public String getSuffix() {
 		return suffix;
 	}
