@@ -1,0 +1,16 @@
+#main_panel .ui-panel-titlebar {
+	padding: 0;
+	text-align: center;
+	font-size: 200%;
+}
+
+#main_panel .ui-panel-footer {
+	font-size: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main_content {
+	width: 100%;
+}
