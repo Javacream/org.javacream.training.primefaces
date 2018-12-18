@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+	start-state="ping-view">
+	<on-start>
+		<set name="flowScope.next" value="'pong'"></set>
+		<evaluate expression="logger.logMessage('on-start')" />
+	</on-start>
+	<view-state id="ping-view" view="ping.xhtml">
+		<on-entry>
+			<evaluate expression="logger.logMessage('on-entry ping-view')" />
+		</on-entry>
+		<on-render>
+			<evaluate expression="logger.logMessage('on-render ping-view')" />
+		</on-render>
+		<transition on="go" to="#{flowScope.next}-view">
+			<set name="flowScope.next" value="'pong'"></set>
+			<evaluate expression="logger.logMessage('transition')" />
+		</transition>
+		<transition on="end" to="end"></transition>
+		<on-exit>
+			<evaluate expression="logger.logMessage('on-exit ping-view' )" />
+		</on-exit>
+	</view-state>
+	<view-state id="pong-view" view="pong.xhtml">
+		<transition on="go" to="#{flowScope.next}-view">
+			<set name="flowScope.next" value="'ping'"></set>
+		</transition>
+		<transition on="end" to="end">
+		</transition>
+	</view-state>
+	<end-state id="end" view="externalRedirect:/home"></end-state>
+	<on-end>
+		<evaluate expression="logger.logMessage('on-end')" />
+	</on-end>
+</flow>
