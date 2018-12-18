@@ -1,15 +1,15 @@
 package org.javacream.books.isbngenerator.web.frontend;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.javacream.books.isbngenerator.api.IsbnGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
-@RequestScoped
-@Named
+@Component("isbnGeneratorWebBean")
+@RequestScope
 public class IsbnGeneratorWebBean {
-	@Inject
+
+	@Autowired
 	private IsbnGenerator isbnGenerator;
 
 	private String generatedIsbn;

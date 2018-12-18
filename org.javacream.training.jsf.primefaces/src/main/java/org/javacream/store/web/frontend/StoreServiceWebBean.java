@@ -1,15 +1,16 @@
 package org.javacream.store.web.frontend;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import javax.faces.bean.RequestScoped;
 
 import org.javacream.store.api.StoreService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @RequestScoped
-@Named
+@Component
 public class StoreServiceWebBean {
-	@Inject
+
+	@Autowired
 	private StoreService storeService;
 
 	private int stock = -1;

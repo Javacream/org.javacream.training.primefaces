@@ -13,7 +13,7 @@
 	</ui:define>
 	<ui:define name="content">
 		<h:form>
-			<p:commandButton ajax="false" value="Generate ISBN" action="#{isbnGeneratorWebBean.next}"></p:commandButton>
+			<p:commandButton ajax="true" value="Generate ISBN" action="#{isbnGeneratorWebBean.next}"></p:commandButton>
 		</h:form>
 		<p:outputLabel value="#{isbnGeneratorWebBean.generatedIsbn}"></p:outputLabel>
 	</ui:define>

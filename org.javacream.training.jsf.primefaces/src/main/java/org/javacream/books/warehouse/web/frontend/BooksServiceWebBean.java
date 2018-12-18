@@ -1,15 +1,14 @@
 package org.javacream.books.warehouse.web.frontend;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
-@RequestScoped
-@Named
+@Component
+@RequestScope
 public class BooksServiceWebBean {
 	private static final Book NOT_FOUND;
 	static {
@@ -17,7 +16,7 @@ public class BooksServiceWebBean {
 		NOT_FOUND.setTitle("NOT_FOUND");
 	}
 
-	@Inject
+	@Autowired
 	private BooksService booksService;
 	private String isbn;
 	private Book book;
