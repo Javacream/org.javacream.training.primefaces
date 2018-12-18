@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="common.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><ui:insert name="title">
+			<h:outputText value="Empty title"></h:outputText>
+		</ui:insert></title>
+</h:head>
+
+<h:body>
+
+	<p:panel id="main_panel">
+		<f:facet name="header">
+			<ui:insert name="pageHeader" />
+		</f:facet>
+		<hr />
+		<h:form>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<p:themeSwitcher id="basic" style="width:165px">
+				<f:selectItem itemLabel="Bluesky" itemValue="bluesky" />
+				<f:selectItem itemLabel="Darkness" itemValue="ui-darkness" />
+			</p:themeSwitcher>
+		</h:form>
+		<hr />
+
+		<p:panelGrid id="main_content" columns="3" layout="grid">
+			<p:panel>
+				<ui:insert name="content-left">
+					<ui:include src="menu.xhtml"></ui:include>
+				</ui:insert>
+			</p:panel>
+			<p:panel>
+				<ui:insert name="content" />
+			</p:panel>
+			<p:panel>
+				<ui:insert name="content-right">
+					<ui:include src="news.xhtml"></ui:include>
+				</ui:insert>
+			</p:panel>
+		</p:panelGrid>
+		<f:facet name="footer">
+			<ui:include src="footer.xhtml" />
+		</f:facet>
+	</p:panel>
+</h:body>
+</html>

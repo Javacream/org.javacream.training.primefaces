@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+>
+
+<ui:composition template="/layout/layout.xhtml">
+	<ui:define name="title">PrimeFaces</ui:define>
+	<ui:define name="pageHeader">
+		<p:outputLabel value="ISBN Generator"></p:outputLabel>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<p:commandButton ajax="true" value="Generate ISBN" action="#{isbnGeneratorWebBean.next}"></p:commandButton>
+		</h:form>
+		<p:outputLabel value="#{isbnGeneratorWebBean.generatedIsbn}"></p:outputLabel>
+	</ui:define>
+</ui:composition>
+</html>
