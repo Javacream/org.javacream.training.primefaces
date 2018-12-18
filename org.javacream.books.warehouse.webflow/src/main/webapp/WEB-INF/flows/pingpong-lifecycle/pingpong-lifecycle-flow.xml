@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	<view-state id="ping">
+		<on-entry>
+			<evaluate expression="simpleFlowLogger.log('on-entry', 'view=ping')"></evaluate>
+		</on-entry>
+		<on-render>
+			<evaluate expression="simpleFlowLogger.log('on-render', 'view=ping')"></evaluate>
+		</on-render>
+		<transition on="go" to="pong">
+			<evaluate expression="simpleFlowLogger.log('transition', 'view=ping, on=go')"></evaluate>
+		</transition>
+		<transition on="stay">
+			<evaluate expression="simpleFlowLogger.log('transition', 'view=ping, on=stay')"></evaluate>
+		</transition>
+		<transition on="end" to="end">
+			<evaluate expression="simpleFlowLogger.log('transition', 'view=ping, on=end')"></evaluate>
+		</transition>
+		<on-exit>
+			<evaluate expression="simpleFlowLogger.log('on-exit', 'view=ping')"></evaluate>
+		</on-exit>
+
+	</view-state>
+	<view-state id="pong">
+		<transition on="go" to="ping"></transition>
+		<transition on="end" to="end"></transition>
+	</view-state>
+	<end-state id="end" view="externalRedirect:/intro"></end-state>
+</flow>

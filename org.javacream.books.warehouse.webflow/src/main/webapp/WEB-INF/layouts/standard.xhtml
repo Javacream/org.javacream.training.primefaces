@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Simple JSF Application</title>
+		<link rel="stylesheet"
+			href="${request.contextPath}/styles/blueprint/screen.css"
+			type="text/css" media="screen, projection" />
+		<link rel="stylesheet"
+			href="${request.contextPath}/styles/blueprint/print.css"
+			type="text/css" media="print" />
+		<!--[if lt IE 8]>
+		<link rel="stylesheet" href="${request.contextPath}/styles/blueprint/ie.css" type="text/css" media="screen, projection" />
+	<![endif]-->
+		<link rel="stylesheet"
+			href="${request.contextPath}/styles/le-frog/jquery-ui-1.8.2.custom.css"
+			type="text/css" media="screen" />
+		<ui:insert name="headIncludes" />
+		<style>
+<!--
+div.ui-datatable>table {
+	margin-bottom: 0;
+}
+-->
+</style>
+	</h:head>
+	<h:body>
+		<hr class="space" />
+		<h:messages id="messages"/>
+		<hr class="space" />
+		<div class="container">
+			<div>
+				<div id="local" class="span-3">
+					<h3>Jump to</h3>
+					<ui:insert name="bookmarks">
+						<ui:include src="../bookmarks.xhtml"></ui:include>
+					</ui:insert>
+				</div>
+				<div class="span-12">
+					<ui:insert name="content" />
+				</div>
+				<div class="span-8 last">
+					<h3>Applications</h3>
+					<ui:insert name="apps">
+						<ui:include src="../apps.xhtml"></ui:include>
+					</ui:insert>
+				</div>
+			</div>
+			<hr class="space" />
+		</div>
+	</h:body>
+</f:view>
+</html>
