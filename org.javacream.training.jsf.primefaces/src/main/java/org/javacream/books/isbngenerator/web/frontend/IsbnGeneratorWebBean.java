@@ -1,7 +1,5 @@
 package org.javacream.books.isbngenerator.web.frontend;
 
-import org.javacream.books.isbngenerator.api.IsbnGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -9,8 +7,6 @@ import org.springframework.web.context.annotation.RequestScope;
 @RequestScope
 public class IsbnGeneratorWebBean {
 
-	@Autowired
-	private IsbnGenerator isbnGenerator;
 
 	private String generatedIsbn;
 
@@ -20,7 +16,7 @@ public class IsbnGeneratorWebBean {
 
 	public String next() {
 
-		generatedIsbn = isbnGenerator.next();
+		generatedIsbn = "ISBN: " + System.currentTimeMillis();
 		return null;
 	}
 }
