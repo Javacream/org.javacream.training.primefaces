@@ -22,7 +22,7 @@
 		<myfaces.version>2.2.12</myfaces.version>
 		<primefaces.version>6.1</primefaces.version>
 		<servlet.version>3.1.0</servlet.version>
-		<spring-security.version>5.0.1.RELEASE</spring-security.version>
+		<spring-security.version>5.2.10.RELEASE</spring-security.version>
 		<tiles.version>3.0.8</tiles.version>
 		<webflow.version>2.5.0.RELEASE</webflow.version>
 	</properties>
